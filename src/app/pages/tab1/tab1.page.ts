@@ -41,13 +41,14 @@ export class Tab1Page {
           if (data.titulo.length === 0 ) {
             return;
           }
-          this.deseosService.crearLista(data.titulo);
+          const listaID = this.deseosService.crearLista(data.titulo);
+          this.router.navigateByUrl(`/tabs/tab1/agregar/${listaID}`);
         }
       }
     ]
     });
 
     alert.present();
-    // this.router.navigateByUrl('/tabs/tab1/agregar');
+
   }
 }
